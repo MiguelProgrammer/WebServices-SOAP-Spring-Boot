@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://miguelprogrammer.com.br"
+        xmlns:tns="http://miguelprogrammer.com.br" elementFormDefault="qualified">
+  <element name="GetCostumerDetailRequest">
+    <complexType>
+      <sequence>
+        <element name="id" type="integer"></element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

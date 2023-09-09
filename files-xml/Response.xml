@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetCostumerDetailResponse xmlns="http://miguelprogrammer.com.br">
+    <CostumerDetail>
+        <id>123</id>
+        <name>Miguel</name>
+        <phone>11912344321</phone>
+        <email>miguel@gmail.com</email>
+    </CostumerDetail>
+</GetCostumerDetailResponse>
