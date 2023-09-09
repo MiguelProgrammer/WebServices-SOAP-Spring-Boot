@@ -5,3 +5,7 @@
 
 ** Wsld gerado <br>
 <img src="https://i.imgur.com/rCT2wn0.png" width="800">
+
+** WSDL e SoapUI | requisições <br>
+<img src="https://i.imgur.com/JoXqf1U.png" width="800"><br>
+Utilizei a plataforma SoapUi para requisições e respostas
