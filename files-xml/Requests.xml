@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GetCostumerDetailRequest
-   xmlns="http://miguelprogrammer.com.br"
-   xsi:schemaLocation="http://miguelprogrammer.com.br costumer-information.xsd"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<GetCostumerDetailRequest xsi:schemaLocation="http://miguelprogrammer.com.br costumer-information.xsd"
+   xmlns="http://miguelprogrammer.com.br" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <id>123</id>
 </GetCostumerDetailRequest>
