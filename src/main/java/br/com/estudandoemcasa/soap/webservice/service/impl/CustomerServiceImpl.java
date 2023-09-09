@@ -3,10 +3,14 @@ package br.com.estudandoemcasa.soap.webservice.service.impl;
 import br.com.estudandoemcasa.soap.webservice.enums.StatusAction;
 import br.com.estudandoemcasa.soap.webservice.model.Custumer;
 import br.com.estudandoemcasa.soap.webservice.service.CustomerService;
+import br.com.estudandoemcasa.soap.webservice.service.exception.CustomerNotFoundException;
+import br.com.estudandoemcasa.soap.webservice.service.exception.FailureDeleteCustomerException;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ObjectUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class CustomerServiceImpl implements CustomerService {
@@ -27,13 +31,17 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Custumer findById(Integer id) {
-        return customer.stream().filter(cs -> cs.getId().equals(id)).findAny().orElse(null);
+    public Custumer findById(Integer id) throws CustomerNotFoundException {
+        Optional<Custumer> cust = customer.stream().filter(cs -> cs.getId().equals(id)).findAny();
+        if(ObjectUtils.isEmpty(cust)){
+            throw new CustomerNotFoundException("Customer not found by ID: {"+id+"}");
+        }
+        return cust.get();
     }
 
     @Override
-    public StatusAction deleteById(Integer id) {
-        if(customer.remove(findById(id))){
+    public StatusAction deleteById(Integer id) throws FailureDeleteCustomerException {
+        if (customer.remove(findById(id))) {
             return StatusAction.SUCCESS;
         }
         return StatusAction.FAILURE;

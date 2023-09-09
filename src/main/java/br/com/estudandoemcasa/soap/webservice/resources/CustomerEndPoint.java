@@ -2,6 +2,8 @@ package br.com.estudandoemcasa.soap.webservice.resources;
 
 import br.com.estudandoemcasa.soap.webservice.enums.StatusAction;
 import br.com.estudandoemcasa.soap.webservice.model.Custumer;
+import br.com.estudandoemcasa.soap.webservice.service.exception.CustomerNotFoundException;
+import br.com.estudandoemcasa.soap.webservice.service.exception.FailureDeleteCustomerException;
 import br.com.estudandoemcasa.soap.webservice.service.impl.CustomerServiceImpl;
 import br.com.miguelprogrammer.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +23,14 @@ public class CustomerEndPoint {
 
     @ResponsePayload
     @PayloadRoot(namespace = nameSpace, localPart = "GetCustomerDetailRequest")
-    public GetCustomerDetailResponse getCustomerDetail(@RequestPayload GetCustomerDetailRequest reqCustomer){
+    public GetCustomerDetailResponse getCustomerDetail(@RequestPayload GetCustomerDetailRequest reqCustomer) throws CustomerNotFoundException {
         Custumer custumer = customerService.findById(reqCustomer.getId());
         return convert(custumer);
     }
 
     @ResponsePayload
     @PayloadRoot(namespace = nameSpace, localPart = "DeleteCustomerRequest")
-    public DeleteCustomerResponse deleteCustomer(@RequestPayload DeleteCustomerRequest customerRequest){
+    public DeleteCustomerResponse deleteCustomer(@RequestPayload DeleteCustomerRequest customerRequest) throws FailureDeleteCustomerException {
         DeleteCustomerResponse response = new DeleteCustomerResponse();
         response.setStatus(covertStatus(customerService.deleteById(customerRequest.getId())));
         return response;
