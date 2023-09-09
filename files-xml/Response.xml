@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GetCostumerDetailResponse xsi:schemaLocation="http://miguelprogrammer.com.br costumer-information.xsd"
+<GetCustomerDetailResponse xsi:schemaLocation="http://miguelprogrammer.com.br customer-information.xsd"
    xmlns="http://miguelprogrammer.com.br" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <CostumerDetail>
+    <CustomerDetail>
         <id>123</id>
-        <name>456</name>
+        <name>miguel</name>
         <phone>11912344321</phone>
         <email>miguel@gmail.com</email>
-    </CostumerDetail>
-</GetCostumerDetailResponse>
+    </CustomerDetail>
+</GetCustomerDetailResponse>

@@ -1,4 +1,4 @@
-package br.com.estudandoemcasa.soap.webservice.customersadministration;
+package br.com.estudandoemcasa.soap.webservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

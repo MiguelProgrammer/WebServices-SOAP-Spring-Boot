@@ -1,4 +1,4 @@
-package br.com.estudandoemcasa.soap.webservice.customersadministration.config;
+package br.com.estudandoemcasa.soap.webservice.config;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -26,7 +26,7 @@ public class WebServiceConfig {
 
     @Bean
     public XsdSchema customerSchema(){
-        return new SimpleXsdSchema(new ClassPathResource("costumer-information.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("customer-information.xsd"));
     }
 
     @Bean(name = "customers")
