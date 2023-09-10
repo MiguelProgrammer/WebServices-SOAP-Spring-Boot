@@ -15,16 +15,16 @@
 <hr>
 
 * WSDL e SoapUI | requisições, utilizei a plataforma SoapUi para requisições e respostas <br>
-<img src="https://i.imgur.com/JoXqf1U.png" width="800"><br>
+<img src="https://i.imgur.com/JoXqf1U.png" width="800"><br><br>
 
 * Listando os Customers<br>
-<img src="https://i.imgur.com/GeuBozY.png" width="800"><br>
+<img src="https://i.imgur.com/GeuBozY.png" width="800"><br><br>
 
 * Listando Customer por ID<br>
-<img src="https://i.imgur.com/pDAeFN9.png" width="800"><br>
+<img src="https://i.imgur.com/pDAeFN9.png" width="800"><br><br>
 
 * Deletando Customer por ID<br>
-<img src="https://i.imgur.com/3m3Ewug.png" width="800"><br>
+<img src="https://i.imgur.com/3m3Ewug.png" width="800"><br><br>
 
 * SecurityConfiguration, essa é a segurança aplicada aos serviços. Abaixo é listado uma request realizada sem autenticação realizada<br>
 ~~~
