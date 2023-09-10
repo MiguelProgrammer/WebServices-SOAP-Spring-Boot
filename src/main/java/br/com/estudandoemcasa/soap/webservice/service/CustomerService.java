@@ -10,5 +10,5 @@ import java.util.List;
 public interface CustomerService {
     List<Custumer> allcustomer();
     Custumer findById(Integer id) throws CustomerNotFoundException;
-    public StatusAction deleteById(Integer id) throws FailureDeleteCustomerException;
+    StatusAction deleteById(Integer id) throws FailureDeleteCustomerException;
 }

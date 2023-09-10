@@ -17,6 +17,9 @@ public class CustomerServiceImpl implements CustomerService {
 
     private static List<Custumer> customer = new ArrayList<>();
 
+    /**
+     * MOCK
+     */
     static {
         customer.add(new Custumer(1, "Amaral", "11 9 5432-2345", "amaral@gmail.com"));
         customer.add(new Custumer(2, "Sula", "11 9 5432-2345", "sula@gmail.com"));
