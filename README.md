@@ -25,3 +25,64 @@
 
 * Deletando Customer por ID<br>
 <img src="https://i.imgur.com/3m3Ewug.png" width="800"><br>
+
+* SecurityConfiguration, essa é a segurança aplicada aos serviços. Abaixo é listado uma request realizada sem autenticação realizada<br>
+~~~
+REQUEST:
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mig="http://miguelprogrammer.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mig:DeleteCustomerRequest>
+         <mig:id>1</mig:id>
+      </mig:DeleteCustomerRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+RESPONSE:
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <SOAP-ENV:Fault>
+         <faultcode>SOAP-ENV:Client</faultcode>
+         <faultstring xml:lang="en">com.sun.xml.wss.XWSSecurityException: Message does not conform to configured policy [ AuthenticationTokenPolicy(S) ]:  No Security Header found; nested exception is com.sun.xml.wss.XWSSecurityException: com.sun.xml.wss.XWSSecurityException: Message does not conform to configured policy [ AuthenticationTokenPolicy(S) ]:  No Security Header found</faultstring>
+      </SOAP-ENV:Fault>
+   </SOAP-ENV:Body>
+~~~
+
+* SecurityConfiguration, requeest com autenticação <br>
+~~~
+REQUEST: 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mig="http://miguelprogrammer.com.br">
+      <soapenv:Header>
+   <wsse:Security
+   	xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" 
+   	mustUnderstand="1">
+   	<wsse:UsernameToken>
+   		<wsse:Username>miguelProgrammer</wsse:Username>
+   		<wsse:Password>123456777</wsse:Password>
+   		</wsse:UsernameToken>
+   	</wsse:Security>
+</soapenv:Header>
+   <soapenv:Body>
+      <mig:GetCustomerDetailRequest>
+         <mig:id>2</mig:id>
+      </mig:GetCustomerDetailRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+RESPONSE:
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:GetCustomerDetailResponse xmlns:ns2="http://miguelprogrammer.com.br">
+         <ns2:CustomerDetail>
+            <ns2:id>2</ns2:id>
+            <ns2:name>Sula</ns2:name>
+            <ns2:phone>11 9 5432-2345</ns2:phone>
+            <ns2:email>sula@gmail.com</ns2:email>
+         </ns2:CustomerDetail>
+      </ns2:GetCustomerDetailResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+~~~~
